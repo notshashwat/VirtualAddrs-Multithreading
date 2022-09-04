@@ -1,0 +1,25 @@
+there are 3 .c files -
+1.parta.c (Enter the pid to get all the starting virt_Addr and corresponding PFN(if present))
+2.partb.c (Enter the pid and the particular virt_Addr to get the corresponding physical addr and encoded info)
+3.partc.c (avg,min,max with multithreading)
+
+to run the parta.c -
+$gcc parta.c
+$sudo ./a.out {pid}
+
+(where {pid} is the pid you wish to enter)
+
+to run the partb.c -
+$gcc partb.c
+$sudo cat /proc/{pid}/maps
+(choose a virt_addr from this)
+$sudo ./a.out {pid} {virt_addr}
+
+(where {pid} is the pid you wish to enter, and {virt_addr} is an address from proc/pid/maps)
+
+to run the partc.c
+$gcc partc.c -lpthread
+$./a.out
+Enter space separated ints and hit Enter
+
+
